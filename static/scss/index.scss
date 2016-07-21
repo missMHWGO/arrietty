@@ -1,0 +1,99 @@
+$theme-blue: #30D0DF;
+// $background-color: #EBEFF2;
+$item-width: 270px;
+$item-height: 335px;
+$title-height: 45px;
+$img-height: 279px;
+$top-deviation: 19px;
+body {
+    margin: 0;
+}
+
+.background {
+    width: calc(100vw);
+    height: calc(100vh);
+    background: url(../img/jdxdxr_7.jpeg) no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    // left: 100%;
+    display: block;
+    select {
+        filter: alpha(opacity=70);
+        opacity: 0.7;
+        background-color: $theme-blue;
+        color: #fff;
+        border: 0;
+        width: 260px;
+        height: 40px;
+        font-size: 15px;
+    }
+    .content-list {
+        padding-left: 100px;
+        .flip-container {
+            width: $item-width;
+            height: $item-height;
+            display: inline-block;
+            overflow: hidden;
+            margin: 20px 50px;
+            .flipper {
+                width: $item-width;
+                height: $item-height;
+                .front {
+                    width: $item-width;
+                    height: $item-height+$top-deviation - 2px;
+                    top: -$top-deviation;
+                    .content img {
+                        width: $item-width;
+                        height: $img-height+$top-deviation - 2px;
+                    }
+                }
+                .back {
+                    width: $item-width;
+                    height: $item-height+$top-deviation - 2px;
+                    border: 2px solid #30D0DF;
+                    top: -$top-deviation;
+                    .content {
+                        a {
+                            width: $item-width;
+                            height: 20px;
+                            color: $theme-blue;
+                            text-decoration: none;
+                            display: block;
+                        }
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .title {
+                    background-color: $theme-blue;
+                    width: $item-width;
+                    height: $title-height;
+                }
+                h1 {
+                    color: #fff;
+                    font-size: 25px;
+                    height: $title-height;
+                    line-height: $title-height;
+                    white-space: pre;
+                    font-family: SimHei;
+                    text-align: center;
+                }
+                P {
+                    font-family: SimHei;
+                    font-size: 20px;
+                    text-align: left;
+                    color: gray;
+                }
+            }
+        }
+    }
+}

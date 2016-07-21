@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./static/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./static/js/angular.min.js"></script>
+    <script type="text/javascript" src="./static/js/jquery.easing.1.3.js"></script>
+    <link rel="stylesheet" type="text/css" href="./static/scss/index.css">
+    <link rel="stylesheet" type="text/css" href="./static/scss/flipper.css">
+</head>
+
+<body ng-app="myApp" ng-controller="customersCtrl">
+    <div class="background"></div>
+    <div class="container">
+        <select ng-click="run()" onchange="bind()">
+            <option value="0">Welcome to WangJiajing's World ^_^</option>
+            <option value="1">Go to WangJiajing's Blog >>></option>
+            <option value="2">Go to WangJiajing's GitHub >>></option>
+        </select>
+        <ul class="content-list" as-sortable="sortableListOptions" data-ng-model="list">
+            <li ng-repeat="item in list" class="flip-container" ontouchstart="this.classList.toggle('hover');" as-sortable-item>
+                <div as-sortable-item-handle>
+                    <div class="flipper" id="{{item.id}}">
+                        <div class="front">
+                            <div class="title">
+                                <h1>{{item.title}}</h1>
+                            </div>
+                            <div class="content">
+                                <img src="{{item.img}}">
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="title">
+                                <h1>{{item.title}}</h1>
+                            </div>
+                            <div class="content">
+                                <p><b>简介：</b>{{item.intro}}</p>
+                                <p><b>功能：</b>{{item.func}}</p>
+                                <p><a href="{{item.link}}">体验一下~O(∩_∩)O~</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="./static/js/index.js"></script>
+    <script type="text/javascript">
+    function bind() {
+        switch ($('select').val()) {
+            case '1':
+                window.open("http://www.wangjiajing.com");
+                break;
+            case '2':
+                window.open("https://github.com/missMHWGO");
+                break;
+            default:
+        }
+    }
+    </script>
+</body>
+
+</html>
