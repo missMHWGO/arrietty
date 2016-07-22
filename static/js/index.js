@@ -95,14 +95,38 @@
                 $("#item4")[0].style.left = '100%';
                 $("#item5")[0].style.left = '100%';
                 $("#item6")[0].style.left = '100%';
+                $("#item7")[0].style.right = '100%';
+                $("#item8")[0].style.right = '100%';
+                $("#item9")[0].style.right = '100%';
+                $("#item10")[0].style.left = '100%';
+                $("#item11")[0].style.left = '100%';
                 $("#item1").delay(1000).animate({ right: '0' }, { easing: 'easeOutQuint', duration: 500 });
                 $("#item2").delay(2000).animate({ right: '0' }, { easing: 'easeOutQuint', duration: 500 });
                 $("#item3").delay(3000).animate({ right: '0' }, { easing: 'easeOutQuint', duration: 500 });
                 $("#item6").delay(4000).animate({ left: '0' }, { easing: 'easeOutQuint', duration: 500 });
                 $("#item5").delay(5000).animate({ left: '0' }, { easing: 'easeOutQuint', duration: 500 });
                 $("#item4").delay(6000).animate({ left: '0' }, { easing: 'easeOutQuint', duration: 500 });
+                $("#item7").delay(7000).animate({ right: '0' }, { easing: 'easeOutQuint', duration: 500 });
+                $("#item8").delay(8000).animate({ right: '0' }, { easing: 'easeOutQuint', duration: 500 });
+                $("#item9").delay(9000).animate({ right: '0' }, { easing: 'easeOutQuint', duration: 500 });
+                $("#item11").delay(10000).animate({ left: '0' }, { easing: 'easeOutQuint', duration: 500 });
+                $("#item10").delay(11000).animate({ left: '0' }, { easing: 'easeOutQuint', duration: 500 });
             }
-        	itemIn();
+            itemIn();
+        }
+        var audio = document.getElementById("audio");
+        $scope.state = "";
+        $scope.playMusic = function(state){
+            $scope.state = state;
+            if ($scope.state=='play') {
+                audio.play();
+                document.getElementsByClassName("music")[0].style.display = 'none';
+                document.getElementsByClassName("music-run")[0].style.display = 'block';                
+            } else if($scope.state=='stop'){
+                audio.pause();
+                document.getElementsByClassName("music-run")[0].style.display = 'none';
+                document.getElementsByClassName("music")[0].style.display = 'block';
+            }
         }
     });
 }());

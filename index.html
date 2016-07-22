@@ -18,6 +18,13 @@
             <option value="1">Go to WangJiajing's Blog >>></option>
             <option value="2">Go to WangJiajing's GitHub >>></option>
         </select>
+        <div id="music">
+            <div class="music" ng-click="playMusic('play')"></div>
+            <div class="music-stop music-run" ng-click="playMusic('stop')"></div>
+        </div>
+        <div>
+            <audio id="audio" src="./static/music/ArriettySong.mp3" autoplay loop></audio>
+        </div>
         <ul class="content-list" as-sortable="sortableListOptions" data-ng-model="list">
             <li ng-repeat="item in list" class="flip-container" ontouchstart="this.classList.toggle('hover');" as-sortable-item>
                 <div as-sortable-item-handle>
