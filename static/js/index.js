@@ -120,7 +120,7 @@
             $("#item9").delay(9000).animate({ right: '0' }, { easing: 'easeOutQuint', duration: 500 });
             $("#item11").delay(10000).animate({ left: '0' }, { easing: 'easeOutQuint', duration: 500 });
             $("#item10").delay(11000).animate({ left: '0' }, { easing: 'easeOutQuint', duration: 500 });
-        }
+        };
         var audio = document.getElementById("audio");
         $scope.state = "";
         $scope.playMusic = function(state) {
@@ -134,6 +134,6 @@
                 document.getElementsByClassName("music-run")[0].style.display = 'none';
                 document.getElementsByClassName("music")[0].style.display = 'block';
             }
-        }
+        };
     });
 }());
