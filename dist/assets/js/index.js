@@ -259,7 +259,7 @@ e.$validators.maxlength=function(a,c){return 0>f||e.$isEmpty(c)||c.length<=f}}}}
             'intro': '实习时参与的项目~',
             'func': '长江云政务新媒体平台后台管理页面',
             'time': '进行中',
-            'link': '',
+            'link': 'http://dev1.lehoolive.com:5050',
             'id': 'item1'
         }, {
             'title': '腾讯众创海报生成器',
